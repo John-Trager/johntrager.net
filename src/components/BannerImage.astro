@@ -1,0 +1,17 @@
+---
+const { imageName = "/images/jt-blog-bg.jpg" } = Astro.props;
+---
+
+<div class="relative w-full h-40 md:h-50 overflow-hidden">
+    <img
+        src={imageName}
+        alt="Background image"
+        class="w-full h-full object-cover object-[center_88%]"
+    />
+    <!-- Overlay text -->
+    <div class="absolute inset-0 flex items-center justify-center px-4">
+        <h3 class="text-white text-xl md:text-2xl font-bold">
+            JT's Blog
+        </h1>
+    </div>
+</div>

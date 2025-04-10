@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css'
-const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,11 +9,11 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- SEO -->
-		<title>{title}</title>
-		<meta name="description" content={description} />
+		<title>JT - Blog</title>
+		<meta name="description" content="JTs old blog from his college and early days." />
 		<meta name="author" content="John Trager" />
 		<!-- Open Graph / etc -->
-		<meta property="og:title" content={title} />
+		<meta property="og:title" content="JT - Blog" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://johntrager.net" />
 		<link rel="canonical" href="https://johntrager.net" />
