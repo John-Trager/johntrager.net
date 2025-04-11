@@ -35,7 +35,7 @@ const {frontmatter} = Astro.props;
   <main>
     <Navigation />
     <h1>{frontmatter.title}</h1>
-    <h2>By {frontmatter.author}</h2>
+    <h2>{frontmatter.date}</h2>
     <p>{frontmatter.description}</p>
     <slot /> <!-- Markdown content is injected here -->
   </main>
