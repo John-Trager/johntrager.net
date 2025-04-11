@@ -3,9 +3,11 @@ import JTBlogLayout from '../layouts/JTBlogLayout.astro';
 import BlogList from '../components/BlogList.astro';
 import Navigation from '../components/Navigation.astro';
 import BannerImage from '../components/BannerImage.astro';
+
+const posts = Object.values(import.meta.glob('./jt-posts/*.md', { eager: true })) as Array<{ url: string; frontmatter: { title: string; author: string } }>;
 ---
 <JTBlogLayout>
     <Navigation />
     <BannerImage />
-    <BlogList />
+    <BlogList posts={posts}/>
 </JTBlogLayout>

@@ -1,8 +1,15 @@
 ---
+const { posts = [] } = Astro.props;
 ---
 <section class="section">
     <h2>Blog</h2>
     <ul>
-      <li><span class="highlight">TODO</span>: well not an actual post, I need to update this!</li>
+      {posts.map(post => (
+        <li>
+            <a class="highlight" href={post.url}>
+            {post.frontmatter.title}
+            </a>
+        </li>
+      ))}
     </ul>
   </section>
