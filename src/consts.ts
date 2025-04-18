@@ -1,44 +1,39 @@
 import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "Astro Nano",
-  EMAIL: "markhorn.dev@gmail.com",
+  NAME: "John Trager",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  TITLE: "John Trager | Software Engineer",
+  DESCRIPTION: "Portfolio of John Trager, a systems-focused software engineer building high-performance tools.",
 };
 
 export const BLOG: Metadata = {
   TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  DESCRIPTION: "John Trager's blog, where he shares his thoughts on life, tech, and more.",
 };
 
 export const WORK: Metadata = {
   TITLE: "Work",
-  DESCRIPTION: "Where I have worked and what I have done.",
+  DESCRIPTION: "Where John Trager has worked and what he has done.",
 };
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+  DESCRIPTION: "A collection of John Trager's projects, with links to demos and repos.",
 };
 
 export const SOCIALS: Socials = [
   { 
-    NAME: "twitter-x",
-    HREF: "https://twitter.com/markhorn_dev",
-  },
-  { 
     NAME: "github",
-    HREF: "https://github.com/markhorn-dev"
+    HREF: "https://github.com/John-Trager"
   },
   { 
     NAME: "linkedin",
-    HREF: "https://www.linkedin.com/in/markhorn-dev",
+    HREF: "https://www.linkedin.com/in/john-trager/",
   }
 ];
