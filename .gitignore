@@ -4,6 +4,7 @@ dist/
 # generated types
 .astro/
 .vscode/
+!.vscode/tasks.json
 
 # dependencies
 node_modules/

@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Create Blog Post",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${workspaceFolder}/scripts/create_blog_post.py",
+                "${input:blogName}"
+            ],
+            "problemMatcher": [],
+            "detail": "Creates a new blog post folder and index.mdx"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "blogName",
+            "type": "promptString",
+            "description": "Enter the name of the blog folder (e.g. astro-guide)"
+        }
+    ]
+}
