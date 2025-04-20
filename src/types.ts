@@ -14,3 +14,8 @@ export type Socials = {
   NAME: string;
   HREF: string;
 }[];
+
+export type CarouselImages = {
+  src: string;
+  alt: string;
+}[];
