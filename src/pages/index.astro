@@ -6,9 +6,6 @@ import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
-import type { CarouselImages } from '@types';
-
-import EmblaCarousel from "@components/EmblaCarousel";
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -30,32 +27,10 @@ const work = await Promise.all(
     return { ...item, Content };
   })
 );
-
-const images: CarouselImages = [
-  {
-    src: '/lighthouse.png',
-    alt: 'Lighthouse',
-  },
-  {
-    src: '/father_son_rocket.jpg',
-    alt: '',
-  },
-  {
-    src: '/patrick.webp',
-    alt: 'Patrick',
-  },
-  {
-    src: '/astro-sphere.jpg',
-    alt: 'sphere',
-  }
-];
-
-const OPTIONS = { loop: true }
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <EmblaCarousel client:load images={images} options={OPTIONS} />
     <h4 class="animate font-semibold text-black dark:text-white">
       Hi, I'm John <span class="text-xl">👋🏻</span> 
     </h4>

@@ -4,6 +4,28 @@ description: "Creating in image carousel component."
 date: "2025-04-19"
 draft: false
 ---
+import EmblaCarousel from '@components/EmblaCarousel'
+
+export const images = [
+  {
+    src: '/lighthouse.png',
+    alt: 'Website lighthouse performance',
+  },
+  {
+    src: '/father_son_rocket.jpg',
+    alt: 'inspirational photo',
+  },
+  {
+    src: '/patrick.webp',
+    alt: '',
+  },
+  {
+    src: '/astro-sphere.jpg',
+    alt: 'another random photo',
+  }
+];
+export const OPTIONS = { loop: true }
+
 
 ### Background
 
@@ -15,4 +37,12 @@ Now with this site, I am able to already put single images into posts in regular
 This however does not satisfy what I want to do. Fortunately, with astro and **.mdx** file extension,
 I can place Astro components directly into these posts all while mostly keeping the syntax in markdown.
 
-### Existing Solutions
+### The End Result
+
+<EmblaCarousel client:visible images={images} options={OPTIONS} />
+
+This react component was made with Embla with some minor tailwinds styling. It still is not perfect but fits the minimum requirements
+like the infinite scrolling, buttons for next/prev, captions for the images, and different size image support.
+
+To improve in the future would be the styling of the buttons, better support for vertical images, better layout for the captions, and ease of use
+when adding new photos and descriptions to a blog.

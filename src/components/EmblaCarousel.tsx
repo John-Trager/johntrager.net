@@ -35,6 +35,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  loading='lazy'
+                  decoding='async'
                   className="embla__slide__number w-full h-full object-contain shadow-inner" />
                 {image.alt !== '' && (
                   <figcaption
