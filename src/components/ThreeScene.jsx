@@ -44,7 +44,12 @@ export default function ThreeScene({ height = 400 }) {
         camera.position.z = 2;
 
         const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshNormalMaterial();
+        
+        const texture = new THREE.TextureLoader().load('/face.jpeg');
+        // const material = new THREE.MeshNormalMaterial();
+        // Create an array of the same material for each cube face
+        const material = Array(6).fill(new THREE.MeshBasicMaterial({ map: texture }));
+
         cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
