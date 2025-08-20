@@ -1,0 +1,25 @@
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "src/content/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}/index"
+    extension: "mdx"
+    format: "frontmatter"
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }  
+      - { label: "Body", name: "body", widget: "markdown" } 
+
+# With my current setup of having each blog post in their own folder this might not work super well...
+# we should just change the blogs to be in a single folder
+
+media_folder: "public/assets" # Location where files will be stored in the repo
+public_folder: "public/assets" # The src attribute for uploaded media
+backend:
+  name: github
+  repo: "John-Trager/johntrager.net"
+  branch: main
+  base_url: https://decap.johntrager.net
