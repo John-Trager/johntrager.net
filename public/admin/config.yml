@@ -4,11 +4,43 @@ collections:
     folder: "src/content/blog"
     create: true
     slug: "{{slug}}/index"
+    extension: "mdx"
+    format: "frontmatter"
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    meta:
+      path:
+        widget: string
+        label: "Path"
+        index_file: "index"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Draft", name: "draft", widget: "boolean", default: false }  
+      - { label: "Body", name: "body", widget: "markdown" } 
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}/index"
+    extension: "md"
+    format: "frontmatter"
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    meta:
+      path:
+        widget: string
+        label: "Path"
+        index_file: "index"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "DemoURL", name: "demoURL", widget: "string" }  
+      - { label: "RepoURL", name: "repoURL", widget: "string" }  
       - { label: "Body", name: "body", widget: "markdown" } 
 
 # With my current setup of having each blog post in their own folder this might not work super well...
