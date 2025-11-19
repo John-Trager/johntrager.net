@@ -1,0 +1,26 @@
+---
+title: "UMich Lecture Video Scraper"
+description: "Find and bulk download University of Michigan Lecture videos."
+date: "Aug 18 2025"
+repoURL: "https://github.com/John-Trager/Leccap-Scraper"
+---
+
+My senior year in college, as my time was coming to a close I wondered how I could preserve the academic materials for my own personal reference in the future.
+Getting reliable access to slides or notes was not always straight forward and having to go to each course and find the files was not simple.
+
+After some thought I found that if there was a way to save all the course's recorded lectures it would suffice as they usually contained the slides as well. Fortunately, almost every class at the University of Michigan has their lectures recorded which are hosted on an internal platform called "Leccap" (lecture capture). Unfortunately there was no straight forward way to download these lecture videos. Thus I decided to build a tool to help solve this gap.
+
+![Leccap Website](/leccap-website.jpeg)
+
+I began by investigated how the videos were loaded on Leccap and fortunately in the loaded html of the page you could find an Amazon S3 link that would lead to the video. The next steps were mostly trivial to automate with python and selenium, besides automating the 2 factor authentication "Duo" which required manual user input.
+
+![Leccap S3 link directly in web page](/leccap-s3.jpeg)
+
+Ultimately the script could go to the leccap website, login and 2 factor auth, and then go back over the years and classes and return all of the S3 video links. These links could then be passed to another script to download.
+
+To polish it all off, I used pyinstaller and PyQt to create a small application that could take a user through the process of downloading their videos.
+
+<img src="/leccap-scraper.jpeg" alt="Leccap Scraper App" style="max-width:400px; width:100%; height:auto;" />
+
+Overall the project was a good exercise in creating a standalone python application that also solved a real problem that students have.
+
